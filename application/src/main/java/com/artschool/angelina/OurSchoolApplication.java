@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.artschool.angelina.entity.User;
+import com.artschool.angelina.entity.TestUser;
 import com.artschool.angelina.repository.UserRepository;
 
 @SpringBootApplication
@@ -21,7 +21,7 @@ public class OurSchoolApplication {
     CommandLineRunner init(UserRepository userRepository) {
         return args -> {
             Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
-                User user = new User(name, name.toLowerCase() + "@domain.com");
+                TestUser user = new TestUser(name, name.toLowerCase() + "@domain.com");
                 userRepository.save(user);
             });
             userRepository.findAll().forEach(System.out::println);

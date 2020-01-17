@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.artschool.angelina.entity.User;
+import com.artschool.angelina.entity.TestUser;
 import com.artschool.angelina.repository.UserRepository;
 
 @RestController
@@ -21,12 +21,12 @@ public class UserController {
 	}
 	
 	@GetMapping("/users")
-	public List<User> getUsers() {
-		return (List<User>) userRepository.findAll();
+	public List<TestUser> getUsers() {
+		return (List<TestUser>) userRepository.findAll();
 	}
 
 	@PostMapping("/users")
-	void addUser(@RequestBody User user) {
+	public void addUser(@RequestBody TestUser user) {
 		userRepository.save(user);
 	}
 
