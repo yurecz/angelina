@@ -8,26 +8,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.artschool.angelina.entity.TestUser;
-import com.artschool.angelina.repository.UserRepository;
+import com.artschool.angelina.model.Account;
+import com.artschool.angelina.repository.AccountRepository;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
-	private final UserRepository userRepository;
+	private final AccountRepository accountRepository;
 
-	public UserController(UserRepository userRepository) {
-		this.userRepository = userRepository;
+	public UserController(AccountRepository accountRepository) {
+		this.accountRepository = accountRepository;
 	}
 	
 	@GetMapping("/users")
-	public List<TestUser> getUsers() {
-		return (List<TestUser>) userRepository.findAll();
+	public List<Account> getUsers() {
+		return (List<Account>) accountRepository.findAll();
 	}
 
 	@PostMapping("/users")
-	public void addUser(@RequestBody TestUser user) {
-		userRepository.save(user);
+	public void addUser(@RequestBody Account account) {
+		accountRepository.save(account);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.artschool.angelina.entity;
+package com.artschool.angelina.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class TestUser {
+public class Account {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,11 +14,11 @@ public class TestUser {
 	private final String name;
 	private final String email;
 
-	protected TestUser() {
+	protected Account() {
 		this.name = "Default Name";
 		this.email = "Default Email";
 	}
-	public TestUser(String name, String email) {
+	public Account(String name, String email) {
 		this.name = name;
 		this.email = email;
 	}
