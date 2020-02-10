@@ -1,4 +1,4 @@
-package com.artschool.angelina.controller;
+package com.artschool.angelina.account;
 
 import java.util.List;
 
@@ -8,15 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.artschool.angelina.model.Account;
-import com.artschool.angelina.repository.AccountRepository;
-
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-public class UserController {
+public class AccountController {
 	private final AccountRepository accountRepository;
 
-	public UserController(AccountRepository accountRepository) {
+	public AccountController(AccountRepository accountRepository) {
 		this.accountRepository = accountRepository;
 	}
 	

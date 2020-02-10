@@ -1,14 +1,7 @@
 package com.artschool.angelina;
 
-import java.util.stream.Stream;
-
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import com.artschool.angelina.model.Account;
-import com.artschool.angelina.repository.AccountRepository;
 
 @SpringBootApplication
 public class OurSchoolApplication {
@@ -17,7 +10,7 @@ public class OurSchoolApplication {
 		SpringApplication.run(OurSchoolApplication.class, args);
 	}
 
-	@Bean
+/*	@Bean
     CommandLineRunner init(AccountRepository accountRepository) {
         return args -> {
             Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
@@ -26,5 +19,5 @@ public class OurSchoolApplication {
             });
             accountRepository.findAll().forEach(System.out::println);
         };
-    }
+    } */
 }
